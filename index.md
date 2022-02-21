@@ -9,3 +9,4 @@
 [SYC2022 图论](/SYC2022图论.html)
 [SYC2022 DP](/SYC2022dp.html)
 [SYC2022 乱搞](/SYC2022乱搞.html)
+[SYC2022 DS](/SYC2022DS.html)
