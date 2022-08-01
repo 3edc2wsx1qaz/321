@@ -275,6 +275,23 @@ $('pass').value = '';}}
 $('submit').onclick = submit;$('pass').onkeydown = function(e) {e.which === 13 || e.keyCode === 13 ? submit() : $('help-password').innerHTML = '';}
 $('pass').focus();
 }
+</script><script src="./src/sha1.min.js"></script>
+<script src="./src/des.min.js"></script>
+<script>
+const article = "ICI6eQPAw4KR1awcRp/gVAvEg4Ox0A1B6RMjTSgWcwlR+h5aXOb5oRHL/8WpuD42VGkgttxqJJbE5Yk1ULRLNi+nQt/BWrJlACYz/qvVkLO6uQxscNC2FXRaFJ0HxhC2bDZHdOERZR51HyQppM74/tWmg6k6B0vKinYuv/eiimTgcFQdQFp7EcIzN/7sNPTHi1bgXHrm7cWvtzjbtQrU0r/nbz7dJvZraZR8ISK8+tC4mDE+w9X5sq85UTw8GbDfSZyrUX1/wvn4XgOVSil0vzibR1fDKYweumtTLwZh9I6nsRHGFVfiMl86P+sVChsuK/zOileil7WfI4iduTtywVbNff6xnY/S"
+window.onload = function() {
+var $ = document.getElementById.bind(document);
+function submit() {
+var pw = $('pass').value, D, E;
+if (hex_sha1(pw + 'Life is tough but so are you.') === '0ec8af332c5793687fc7b29e85793f733b4c88d3'){
+D = atob(article);
+E = des(pw, D, 0, 0, 0, 0).substr(0, 262);
+document.body.innerHTML = E;}
+ else{ $('help-password').innerHTML = 'Password Error !';
+$('pass').value = '';}}
+$('submit').onclick = submit;$('pass').onkeydown = function(e) {e.which === 13 || e.keyCode === 13 ? submit() : $('help-password').innerHTML = '';}
+$('pass').focus();
+}
 </script></head><body for="html-export">
 <div class="text-center" style="margin-top: 10px">
 <label>Password:</label>
